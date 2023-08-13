@@ -137,6 +137,9 @@
 
       @include tr(300, ease);
 
+      border: none;
+      outline: none;
+
       @include dfc;
       flex-direction: column;
       text-align: center;

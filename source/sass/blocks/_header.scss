@@ -1,6 +1,10 @@
 .header {
   padding: clamp(2.5rem, 3.75vw, 3.75rem) 0 0 0;
 
+  @include mq(max, mob-mq) {
+    padding-top: 3.75rem;
+  }
+
   &__inner {
     @include dfc;
   }
@@ -10,6 +14,10 @@
 
     @include tr(300, ease);
 
+    @include mq(max, mob-mq) {
+      max-width: 8.75rem;
+    }
+
     @include hover {
       &:hover {
         filter: brightness(120%) drop-shadow(0 0 1rem rgba(var(--w-clr), 0.25));
@@ -18,3 +26,4 @@
     }
   }
 }
+

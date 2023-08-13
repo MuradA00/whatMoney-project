@@ -2,12 +2,16 @@
   background: url('../../img/footer/footer-overlay.svg');
 
   background-size: 2000px;
-  background-position: 50% 25%;
+  background-position: 50% 20%;
   background-repeat: no-repeat;
 
-  padding: clamp(7.75rem, 11.25vw, 11.25rem) 0 3rem 0;
+  padding: clamp(7.75rem, 13.25vw, 13.25rem) 0 3rem 0;
 
   position: relative;
+
+  @include mq(max, tab-mq) {
+    background-size: 1500px;
+  }
 
   &__body {
     overflow: hidden;
