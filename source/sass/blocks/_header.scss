@@ -1,0 +1,20 @@
+.header {
+  padding: clamp(2.5rem, 3.75vw, 3.75rem) 0 0 0;
+
+  &__inner {
+    @include dfc;
+  }
+  &__logo {
+    max-width: 11.25rem;
+    @include m-a;
+
+    @include tr(300, ease);
+
+    @include hover {
+      &:hover {
+        filter: brightness(120%) drop-shadow(0 0 1rem rgba(var(--w-clr), 0.25));
+        transform: scale(1.025);
+      }
+    }
+  }
+}

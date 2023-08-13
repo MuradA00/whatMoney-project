@@ -1,0 +1,33 @@
+.heading {
+  --heading-max-w: 100%;
+  --heading-mb: clamp(3.5rem, 5vw, 5rem);
+  --text-clr: #fdfdfd;
+  --ls: -0.54px;
+
+  max-width: var(--heading-max-w);
+  width: 100%;
+
+  color: var(--text-clr);
+
+  font-size: clamp(1.75rem, 3.375rem, 3.375vw);
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: var(--ls);
+
+  text-align: center;
+
+  margin-bottom: var(--heading-mb);
+
+  @include m-a;
+
+  & > span {
+    color: var(--main-clr);
+  }
+
+  &--dark {
+    --text-clr: #0c0b0a;
+  }
+  &--smaller-mb {
+    --heading-mb: clamp(3.5rem, 3.75rem, 3.75rem);
+  }
+}

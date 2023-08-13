@@ -1,0 +1,43 @@
+:root {
+  --ff: 'TT-Firs';
+
+  --w-clr: 255, 255, 255;
+  --w-clr_300: 144, 148, 165;
+  --b-clr: 0, 0, 0;
+  --ppl-clr: 139, 29, 255;
+  --bl-clr: 0, 174, 255;
+  --body-clr: 12, 11, 10;
+  --y-clr: 255, 208, 65;
+  --dark-clr: 15, 15, 27;
+  --header-clr: 20, 23, 36;
+  --main-text-clr: 96, 92, 83;
+  --o-clr: #E7A82F;
+  --main-clr: #E4BC6D;
+
+  --main-gradient: (180deg, rgba(228, 188, 109, 0.00) 0%, #E4BC6D 100%);
+
+  --text-xxs: 0.625rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-xm: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 2.5rem;
+
+  --cont-px: 1rem;
+  --cont-w: 77.5rem;
+}
+
+$media: (
+  desk-1-mq: 85.375em,
+  desk-2-mq: 90em,
+  desk-3-mq: 120em,
+  tab-mq: 78.5em,
+  xs-tab-mq: 48em,
+  mob-mq: 40em,
+  sm-mob-mq: 24em
+);

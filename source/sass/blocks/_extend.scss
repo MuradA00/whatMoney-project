@@ -1,0 +1,121 @@
+%hover-el {
+  @include tr(200, ease);
+
+  @include hover {
+    &:hover {
+      filter: brightness(120%);
+    }
+  }
+  &:active {
+    filter: brightness(140%);
+  }
+}
+
+%btn-hover {
+  transition: 100ms ease;
+
+  @include hover {
+    &:hover {      filter: brightness(80%);
+    }
+  }
+  &:active {
+    filter: brightness(70%);
+
+    transform: scale(.99);
+  }
+}
+
+.inner-heading {
+  --inner-heading-w: 3.375rem;
+
+  @include m(b, clamp(1.5rem, 2.5vw, 2.5rem));
+
+  @include fl(column, flex-start, 1rem);
+  justify-content: space-between;
+
+  &__text {
+    @include fl(column, flex-start, 1rem);
+  }
+  &__return-link {
+    @include dfc;
+
+    text-align: center;
+
+    padding: 0.875rem 1rem;
+
+    border-radius: .5rem;
+
+    background-color: rgba(var(--inner-block-clr), 1);
+
+    color: var(--text-return-link-clr);
+
+    font-weight: 500;
+    font-size: clamp(var(--text-sm), 1vw, var(--text-base));
+
+    @extend %btn-hover;
+  }
+  &__dynamic {
+    position: relative;
+
+    img {
+      @include tr(200, ease);
+    }
+
+    &::before {
+      @include pseudo;
+
+      width: 1.875rem;
+      height: 1.5rem;
+
+      background-image: url('../../img/open-case/sound-off-icon@2x.webp');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+
+      top: 50%;
+      left: 50%;
+
+      opacity: 0;
+
+      @include tr(200, ease);
+
+      transform: translate(-50%, -50%);
+    }
+
+    &--active {
+      &::before {
+        opacity: 1;
+      }
+      img {
+        opacity: 0;
+      }
+    }
+  }
+  &__icon {
+    width: var(--inner-heading-w);
+
+    padding: 0.625rem 0.75rem;
+
+    border-radius: .5rem;
+
+    @include dfc;
+
+    background-color: rgba(var(--inner-block-clr), 1);
+  }
+  &__title {
+    font-size: 21px;
+    font-family: var(--ff-m);
+    font-weight: 500;
+  }
+}
+
+@include mq(min, mob-mq) {
+  .inner-heading {
+    flex-direction: row;
+    grid-gap: 1.5rem;
+
+    &__text {
+      align-items: center;
+      flex-direction: inherit;
+    }
+  }
+}
