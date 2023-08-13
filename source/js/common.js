@@ -4,6 +4,7 @@ if (Swiper) {
 		slidesPerView: 'auto',
     roundLengths: true,
 		centeredSlides: true,
+    speed: 600,
     	coverflowEffect: {
 			rotate: 0,
 			stretch: 80,
