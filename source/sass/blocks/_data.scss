@@ -5,29 +5,25 @@
     &-main {
       font-size: clamp(1.5rem, 1.875vw, 1.875rem);
 
-      margin-bottom: clamp(1.125rem, 1.25vw, 1.25rem);
+      margin-bottom: clamp(2.25rem, 3.75vw, 3.75rem);
     }
   }
   &__bubble {
     max-width: 32.5rem;
     @include m-a;
-    margin-bottom: clamp(0.875rem, 1.5vw, 1.5rem);
+    margin-bottom: clamp(2rem, 3.75vw, 3.75rem);
 
     overflow: hidden;
 
     aspect-ratio: 1 / 1;
 
-    // background-image: url('../../img/data/brown-circle-overlay.svg');
-    // background-size: 100% 100%;
-    // background-repeat: no-repeat;
+    border-radius: 50%;
 
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+    background: linear-gradient(163deg, #53411C 0%, #000 100%);
+
+    border: 1px solid rgba(246, 222, 175, .6);
+
+    box-shadow: 0 0 49px 6px rgba(241, 203, 112, .25);
 
     & > *:not(img) {
       position: relative;
@@ -128,6 +124,7 @@
     max-width: 51rem;
     @include m-a;
     display: grid;
+    grid-gap: 1.5rem;
     grid-template-columns: repeat(13, 1fr);
     align-items: flex-end;
 
@@ -150,31 +147,17 @@
     &-item {
       grid-column: span 4;
 
-      // background-image: url('../../img/data/circle-overlay.svg');
-      // background-size: 100% 100%;
-      // background-position: center;
-      // background-repeat: no-repeat;
+      border: 1px solid rgba(246, 222, 175, .7);
 
-      img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
+      box-shadow: 0 0 14px 2px rgba(241, 203, 112, .25);
 
-      overflow: hidden;
+      border-radius: 50%;
 
-      & > *:not(img) {
-        position: relative;
-      }
+      background-color: #0C0B0A;
 
       aspect-ratio: 1 / 1;
 
       @include tr(300, ease);
-
-      border: none;
-      outline: none;
 
       @include dfc;
       flex-direction: column;
@@ -217,7 +200,6 @@
       &-item {
         padding: 1.5rem;
         width: calc(50% - 1.5rem);
-        margin: -2rem 0 0 0;
 
         &:nth-child(2) {
           width: 100%;

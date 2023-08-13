@@ -1,18 +1,9 @@
 if (Swiper) {
   const quotersSlider = new Swiper('.quotes__hidden', {
 		effect: 'coverflow',
-		slidesPerView: 'auto',
-    roundLengths: true,
-		centeredSlides: true,
-    speed: 600,
-    	coverflowEffect: {
-			rotate: 0,
-			stretch: 80,
-			depth: 200,
-			modifier: 1, // 2,3
-			slideShadows : false,
-		},// Отображать три слайда
+		slidesPerView: 1,
     spaceBetween: 20,
+    speed: 500,
     pagination: {
       el: '.quotes__slider-pag', // Элемент контейнера буллетов
       clickable: true, // Сделать буллеты кликабельными

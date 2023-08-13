@@ -229,32 +229,10 @@
             padding: 1.5rem 1.5rem 1.875rem 1.5rem;
             transform: translateY(0) !important;
             min-height: 18.125rem;
-            width: 80% !important;
-            @include m-a;
-
           }
 
         }
       }
     }
-  }
-}
-
-.quotes {
-  .swiper-slide {
-    transform: scale(.875) !important;
-
-    opacity: .5;
-  }
-  .swiper-slide-next {
-    right: 72.5%;
-  }
-  .swiper-slide-prev {
-    left: 72.5%;
-  }
-  .swiper-slide-active {
-    transform: scale(1) !important;
-    z-index: 5 !important;
-    opacity: 1;
   }
 }

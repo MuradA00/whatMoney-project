@@ -2,7 +2,7 @@
   background: url('../../img/footer/footer-overlay.svg');
 
   background-size: 2000px;
-  background-position: 50% 20%;
+  background-position: 50% 15%;
   background-repeat: no-repeat;
 
   padding: clamp(7.75rem, 13.25vw, 13.25rem) 0 3rem 0;
@@ -10,7 +10,11 @@
   position: relative;
 
   @include mq(max, tab-mq) {
-    background-size: 1500px;
+    background-size: 1400px;
+  }
+
+  @include mq(max, mob-mq) {
+    background-size: 1000px ;
   }
 
   &__body {
