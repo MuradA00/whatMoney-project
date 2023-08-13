@@ -34,9 +34,10 @@ html {
   font-size: 16px;
   line-height: normal;
   min-height: 100vh;
-  min-height: -webkit-fill-available;
 
   overflow-x: hidden;
+
+  min-height: -webkit-fill-available;
 
   scroll-behavior: smooth;
 }

@@ -1,0 +1,197 @@
+.data {
+  position: relative;
+  &__heading {
+    margin-bottom: clamp(1.5rem, 5vw, 5rem);
+    &-main {
+      font-size: clamp(1.5rem, 1.875vw, 1.875rem);
+
+      margin-bottom: clamp(1.125rem, 1.25vw, 1.25rem);
+    }
+  }
+  &__bubble {
+    max-width: 32.5rem;
+    @include m-a;
+    margin-bottom: clamp(0.875rem, 1.5vw, 1.5rem);
+
+    aspect-ratio: 1 / 1;
+
+    background-image: url('../../img/data/brown-circle-overlay.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    @include dfc;
+    flex-direction: column;
+    text-align: center;
+
+    padding: 1.25rem;
+
+    &-index {
+      color: var(--main-clr);
+      font-weight: 600;
+      font-size: clamp(4.5rem, 5vw, 5rem);
+    }
+    &-text {
+      color: #CECECE;
+      font-size: 22px;
+      line-height: 160%;
+      font-weight: 400;
+    }
+  }
+  &__path {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-gap: clamp(1.375rem, 2vw, 2rem);
+
+    position: relative;
+
+    &-line {
+      position: relative;
+    }
+
+    &-item {
+      padding: 0.875rem 1.25rem;
+      position: relative;
+      border-radius: 20px;
+      background: rgba(25, 23, 20, 0.90);
+      backdrop-filter: blur(7.5px);
+
+      @include dfc;
+      text-align: center;
+
+      border: 1px solid rgba(232, 206, 156, .25);
+
+      span {
+        color: #FDFDFD;
+        font-size: clamp(1.125rem, 1.375vw, 1.375rem);
+        line-height: 120%;
+        letter-spacing: -.22px;
+        font-weight: 400;
+      }
+    }
+
+    &::before {
+      z-index: -1;
+      pointer-events: none;
+      @include pseudo;
+
+      width: 1px;
+      height: calc(100% - (19px * 2));
+
+      top: 50%;
+      transform: translateY(-50%);
+
+      opacity: 0.5;
+      background: linear-gradient(90deg, rgba(221, 214, 199, 0.00) 0%, #DDD6C7 48.96%, rgba(221, 214, 199, 0.00) 100%);
+    }
+  }
+  &__subheading {
+    font-size: clamp(1.125rem, 1.375vw, 22px);
+    font-weight: 400;
+
+    max-width: 33rem;
+    letter-spacing: -0.22px;
+
+    color: #CECECE;
+
+    margin-bottom: 0;
+  }
+  &__container {
+    --cont-w: 53.375rem;
+  }
+  padding: clamp(5rem, 10vw, 10rem) 0;
+
+  &__row {
+    margin-bottom: clamp(2.625rem, 3.75vw, 3.75rem);
+    max-width: 51rem;
+    @include m-a;
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    align-items: flex-end;
+
+    &-header {
+      font-size: clamp(var(--text-sm), 1vw, var(--text-base));
+      line-height: 110%;
+      font-weight: 500;
+    }
+    &-value {
+      color: var(--main-clr);
+      font-size: clamp(2rem, 2.5vw, 2.5rem);
+      font-weight: 600;
+    }
+    &-text {
+      font-size: var(--text-sm);
+      line-height: 150%;
+      color: #CECECE;
+    }
+
+    &-item {
+      grid-column: span 4;
+
+      background-image: url('../../img/data/circle-overlay.svg');
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      aspect-ratio: 1 / 1;
+
+      @include tr(300, ease);
+
+      @include dfc;
+      flex-direction: column;
+      text-align: center;
+
+      &:nth-child(2) {
+        transform: translateY(-1.25rem);
+        grid-column: span 5;
+
+        .data {
+          &__row {
+            &-header {
+              font-size: clamp(1rem, 1.375vw, 1.375rem);
+
+              margin-bottom: 1rem;
+            }
+            &-value {
+              font-size: clamp(2.625rem, 3.5vw, 3.5rem);
+            }
+            &-text {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mq(max, mob-mq) {
+  .data {
+    &__heading {
+      margin-bottom: 3.5rem;
+    }
+    &__row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      grid-gap: 0 30px;
+      &-item {
+        padding: 1.5rem;
+        width: calc(50% - 1.5rem);
+        margin: -2rem 0 0 0;
+
+        &:nth-child(2) {
+          width: 100%;
+          max-width: 300px;
+          order: -1;
+
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+}
+
+.swiper-container-3d {
+  transform-style: preserve-3d;
+}

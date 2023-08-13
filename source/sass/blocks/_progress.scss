@@ -137,6 +137,9 @@
       display: flex;
       flex-direction: column;
 
+      &-descr {
+        font-size: var(--text-xm);
+      }
       &-item {
         display: flex;
         flex-direction: column;
@@ -156,7 +159,8 @@
       }
       &-image {
         max-width: 21.75rem;
-        right: -5rem;
+        right: -3.75rem;
+        top: 72.5%;
       }
     }
   }

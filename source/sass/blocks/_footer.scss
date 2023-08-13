@@ -1,0 +1,35 @@
+.footer {
+  background: url('../../img/footer/footer-overlay.svg');
+
+  background-size: 2000px;
+  background-position: 50% 25%;
+  background-repeat: no-repeat;
+
+  padding: clamp(7.75rem, 11.25vw, 11.25rem) 0 3rem 0;
+
+  position: relative;
+
+  &__body {
+    overflow: hidden;
+
+    @include dfc;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__logo {
+    margin-bottom: clamp(1rem, 3vw, 3rem);
+  }
+  &__rights {
+    text-align: center;
+    &-text {
+      display: block;
+      font-size: 0.875rem;
+      color: rgba(108, 102, 91, 1);
+
+      margin-bottom: 1.25rem;
+      padding-bottom: 1.125rem;
+
+      border-bottom: 1px solid rgba(228, 188, 109, .1);
+    }
+  }
+}

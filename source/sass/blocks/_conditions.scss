@@ -1,0 +1,130 @@
+.conditions {
+  --item-gap: 5.625rem;
+  --icon-ratio: 4.5rem;
+
+  padding: clamp(5rem, 10vw, 10rem) 0;
+
+  background-color: #F9F8F6;
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    position: relative;
+
+    &::after {
+      @include pseudo;
+
+      width: 100%;
+      height: 1px;
+
+      top: calc((var(--item-gap) / 2)  + var(--icon-ratio));
+      left: 0;
+
+      background: linear-gradient(270deg, rgba(210, 200, 177, 0.00) 0%, #E0D7C3 50%, rgba(224, 215, 195, 0.00) 100%);
+    }
+
+    &-item {
+      --point-ratio: 2.375rem;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-gap: var(--item-gap);
+
+      text-align: center;
+    }
+    &-icon {
+      width: var(--icon-ratio);
+      height: var(--icon-ratio);
+
+      img {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+      }
+
+      position: relative;
+
+      &::before {
+        @include pseudo;
+
+        width: var(--point-ratio);
+        height: var(--point-ratio);
+
+        top: calc((var(--icon-ratio) / 1.375) + (var(--item-gap) / 2));
+
+        background-image: url('../../img/conditions/point-icon.svg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
+        z-index: 1;
+
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    &-header {
+      color: #0C0B0A;
+
+      margin-bottom: clamp(6px, 0.875vw, 14px);
+
+      line-height: 128%;
+
+      font-weight: 500;
+      font-size: clamp(1.5rem, 1.5vw, 30px);
+    }
+    &-descr {
+      text-align: center;
+
+      max-width: 19.5rem;
+      @include m-a;
+
+      p {
+        color: #514C43;
+        font-size: clamp(0.875rem, 1vw, 1rem);
+      }
+    }
+  }
+}
+
+@include mq(max, mob-mq) {
+  .conditions {
+    --icon-ratio: 3.125rem;
+    --row-spacing: 3.875rem;
+
+    &__row {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 2.25rem;
+
+      margin-left: var(--row-spacing);
+
+      &::after {
+        width: 1px;
+        height: 100%;
+        left: calc(-1 * var(--row-spacing) + 19px);
+        top: 0;
+
+      }
+
+      &-item {
+        grid-gap: 0.75rem;
+        text-align: left;
+
+        align-items: flex-start;
+      }
+      &-icon {
+        &::before {
+          top: 50%;
+          left: calc(-1 * var(--row-spacing));
+          transform: translateY(-50%) translateX(0);
+        }
+      }
+      &-descr {
+        text-align: left;
+      }
+    }
+  }
+}
